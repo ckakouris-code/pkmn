@@ -1,8 +1,9 @@
+/*Global Styles that apply to all pages*/
 body {
     text-align: center;
     font-family: Arial, sans-serif;
-    margin-top: 300px;
-    background-color: #ec0000;
+    margin-top: 150px;
+    background-color: #ffffff;
 }
 
 select, button {
@@ -13,11 +14,42 @@ select, button {
 }
 
 button {
-    background-color: #ffffff;
+    background-color: #d90505;
     border: none;
     border-radius: 5px;
 }
 
 button:hover {
     background-color: #13500c;
+}
+
+h1 {
+   color: blueviolet; 
+}
+
+h2 {
+
+    margin-top: 150px;
+    margin-left: 25px;
+    color: blueviolet;
+}
+
+searchResult {
+
+margin-top: 25px;
+text-align: center;
+background-color: blueviolet;
+
+}
+
+/*fire.html*/
+
+.pkfire {
+
+background-color: ;
+
+}
+
+.pkfire h1{
+
 }
