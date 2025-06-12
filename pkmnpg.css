@@ -42,14 +42,191 @@ background-color: blueviolet;
 
 }
 
+
 /*fire.html*/
 
 .pkfire {
-
-background-color: ;
-
+    background-color: #36454f;
+    color: whitesmoke;
 }
 
 .pkfire h1{
+    color: white;
+}
+
+.pkfire #homeBtn {
+    background-color: #FF5733; /* Fiery red */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.pkfire #homeBtn:hover {
+    background-color: #E64A19;
+    transform: scale(1.1);
+}
+
+.pkfire #randomfire {
+    background-color: #FF5733; /* Fiery red */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.fire-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px auto;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+.fire-layout img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.center-column {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.center-column button {
+  margin: 12px 0;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/*flying.html*/
+
+.pkfly #homeBtn{
 
 }
+
+
+/*grass.html*/
+
+.pkgrass {
+
+}
+
+
+/*water.html*/
+
+.pkwater {
+
+}
+
+
+/*bug.html*/
+
+.pkbug {
+
+}
+
+
+/*dark.html*/
+
+.pkdark {
+
+}
+
+
+/*dragon.html*/
+
+.pkdrag {
+
+}
+
+
+/*electric*/
+
+.pkelec {
+
+}
+
+
+/*fairy.html*/
+
+.pkfairy {
+
+}
+
+
+/*fighting.html*/
+
+.pkfight {
+    
+}
+
+
+/*ghost.html*/
+
+.pkghost {
+    
+}
+
+
+/*ground.html*/
+
+.pkground {
+    
+}
+
+
+/*ice.html*/
+
+.pkice {
+    
+}
+
+
+/*normal.html*/
+
+.pknorm {
+    
+}
+
+
+/*poison.html*/
+
+.pkpoison {
+    
+}
+
+
+/*psychic.html*/
+
+.pkpsy {
+    
+}
+
+
+/*rock.html*/
+
+.pkrock {
+    
+}
+
+
+/*steel.html*/
+
+.pksteel {
+    
+}
+
