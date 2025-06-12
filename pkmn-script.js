@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
-    // === HOME PAGE FUNCTIONALITY ===
+    console.log("✅ Main script loaded.");
 
-    // Random Pokémon by Type
+    // === HOME PAGE FUNCTIONALITY ===
     const randomBtn = document.getElementById("randomButton");
     const typeDropdown = document.getElementById("type");
     const searchResult = document.getElementById("searchResult");
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
     }
 
-    // Search by Name
+    // === SEARCH FUNCTION ===
     const searchBtn = document.getElementById("searchButton");
     const searchInput = document.getElementById("searchInput");
 
@@ -79,9 +79,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
     }
 
-    // === SHARED FUNCTIONALITY ===
-
-    // Random Type Button
+    // === RANDOM TYPE BUTTON ===
     const randomTypeBtn = document.getElementById("randomTypeBtn");
     if (randomTypeBtn) {
         const typePages = [
@@ -97,45 +95,61 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
     }
 
-    // Home Button
+    // === HOME BUTTON ===
     const homeBtn = document.getElementById("homeBtn");
     if (homeBtn) {
         homeBtn.addEventListener("click", function () {
-            window.location.href = "pkmnpg-index.html";
+            window.location.href = "pkmnpg-index.html"; // Adjust homepage filename if needed
         });
     }
 
-    // === FIRE.HTML FUNCTIONALITY ===
+    // === FIRE TYPE FUNCTIONALITY (ONLY RUNS ON FIRE.HTML) ===
+    if (document.body.classList.contains("pkfire")) {
+        console.log("🔥 Fire script active.");
 
-    const randomFireBtn = document.getElementById("randomfire");
-    const fireResult = document.getElementById("fireResult");
+        const randomFireBtn = document.getElementById("randomfire");
+        const fireResult = document.getElementById("fireResult");
 
-    if (randomFireBtn && fireResult) {
+        if (!randomFireBtn || !fireResult) return;
+
         let firePokemonList = [];
 
         try {
             const response = await fetch("https://pokeapi.co/api/v2/type/fire");
             const data = await response.json();
             firePokemonList = data.pokemon.map(p => p.pokemon.name);
+            console.log(`✅ Loaded ${firePokemonList.length} Fire-Type Pokémon.`);
         } catch (error) {
-            console.error("🔥 Failed to load Fire-type Pokémon:", error);
-            fireResult.textContent = "Failed to load Fire-type Pokémon.";
+            console.error("❌ Error loading Fire-Type Pokémon list:", error);
+            fireResult.textContent = "Failed to load Pokémon list.";
             return;
         }
 
         randomFireBtn.addEventListener("click", async function () {
-            fireResult.innerHTML = "Loading Pokémon...";
+            if (firePokemonList.length === 0) {
+                console.error("⚠ No Pokémon available.");
+                fireResult.textContent = "No Fire-Type Pokémon found.";
+                return;
+            }
+
+            fireResult.innerHTML = "Fetching Pokémon...";
+
             const randomName = firePokemonList[Math.floor(Math.random() * firePokemonList.length)];
 
             try {
                 const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomName}`);
                 const pokemon = await res.json();
 
+                const formattedName = pokemon.name.replace(" ", "_").replace("-", "_").toLowerCase();
+                const serebiiLink = `https://www.serebii.net/pokemon/${formattedName}`;
+                const bulbapediaLink = `https://bulbapedia.bulbagarden.net/wiki/${pokemon.name.replace(" ", "_")}_(Pokémon)`;
+
                 fireResult.innerHTML = `
                     <h3>${pokemon.name.toUpperCase()}</h3>
                     <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
                     <p>Type: ${pokemon.types.map(t => t.type.name).join(", ")}</p>
-                    <a href="https://www.pokemon.com/us/pokedex/${pokemon.name}" target="_blank">View Pokédex Entry</a>
+                    <a href="${serebiiLink}" target="_blank">View on Serebii</a> |
+                    <a href="${bulbapediaLink}" target="_blank">View on Bulbapedia</a>
                 `;
             } catch (error) {
                 console.error("❌ Error fetching Pokémon details:", error);
@@ -143,7 +157,10 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
         });
     }
+
+    console.log("✅ All event listeners attached.");
 });
+
 
 // === WATER.HTML FUNCTIONALITY ===
 
@@ -623,7 +640,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 // === Fighting.HTML FUNCTIONALITY ===
 
 document.addEventListener("DOMContentLoaded", async function () {
-  if (document.body.classList.contains("pkfighting")) {
+  if (document.body.classList.contains("pkfight")) {
     const randomFightingBtn = document.getElementById("randomfighting");
     const fightingResult = document.getElementById("fightingResult");
 

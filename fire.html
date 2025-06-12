@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fire Type Pokémon</title>
-    <link rel="stylesheet" href="pkmnpg.css"/>
+    <link rel="stylesheet" href="pkmnpg.css">
 </head>
 <body class="pkfire">
     <header>
         <h1>🔥 Welcome to Fire-Type Pokémon 🔥</h1>
     </header>
+
     <div class="fire-layout">
-  <img src="type pictures/magmar.png" class="magmar" alt="Magmar">
-  <div class="center-column">
-    <p>This page showcases fiery Pokémon goodness!</p>
-    <button id="randomfire">Get a Random Fire-Type Pokémon</button>
-    <p id="fireResult"></p>
-  </div>
-  <img src="type pictures/torchic.png" class="torchic" alt="Torchic">
-</div>
+        <img src="type pictures/magmar.png" class="magmar" alt="Magmar">
+
+        <div class="center-column">
+            <button id="randomfire">Get a Random Fire-Type Pokémon</button>
+            <p id="fireResult"></p>
+        </div>
+
+        <img src="type pictures/torchic.png" class="torchic" alt="Torchic">
+    </div>
+
     <button id="homeBtn">Home</button>
+
+    <!-- Fire-Type Section (Moved Inside Body Correctly) -->
+    <main>
+        <button id="randomfire">Get a Random Fire-Type Pokémon</button>
+        <p id="fireResult"></p>
+    </main>
+
     <script src="pkmn-script.js"></script>
 </body>
 </html>
