@@ -34,26 +34,26 @@ h2 {
     color: blueviolet;
 }
 
-searchResult {
-
-margin-top: 25px;
-text-align: center;
-background-color: blueviolet;
-
+#searchResult {
+    margin-top: 25px;
+    text-align: center;
+    background-color: blueviolet;
 }
 
 
-/*fire.html*/
 
+
+/* Fire Page Styles */
 .pkfire {
     background-color: #36454f;
     color: whitesmoke;
 }
 
-.pkfire h1{
+.pkfire h1 {
     color: white;
 }
 
+/* Fire Page Home Button */
 .pkfire #homeBtn {
     background-color: #FF5733; /* Fiery red */
     color: white;
@@ -67,10 +67,10 @@ background-color: blueviolet;
 
 .pkfire #homeBtn:hover {
     background-color: #E64A19;
-    transform: scale(1.1);
 }
 
-.pkfire #randomfire {
+/* Fire Page Random Button */
+.randomfire {
     background-color: #FF5733; /* Fiery red */
     color: white;
     padding: 10px 20px;
@@ -82,6 +82,117 @@ background-color: blueviolet;
 }
 
 .fire-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px auto;
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+.fire-layout img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    flex-grow: 1;
+}
+
+.center-column {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.center-column button {
+    margin: 12px 0;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Link Container */
+.link-container {
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Serebii Link */
+.dex-link.serebii {
+    background-color: white;
+    color: black;
+    padding: 8px;
+    border-radius: 5px;
+    display: none;
+}
+
+.dex-link.serebii:hover {
+    background-color: #2f6e31;
+}
+
+/* Bulbapedia Link */
+.dex-link.bulbapedia {
+    background-color: #1e90ff;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    display: none;
+}
+
+.dex-link.bulbapedia:hover {
+    background-color: #156dbe;
+}
+
+/*water.html*/
+
+/* ====== Base Page Layout ====== */
+.pkwater {
+  background-color: #013a63; /* Deep ocean blue */
+  color: #e0f7fa; /* Light seafoam */
+}
+
+.pkwater h1 {
+  color: #a7c7e7; /* Soft sky blue */
+}
+
+/* ====== Home Button ====== */
+.pkwater #homeBtn {
+  background-color: #0288d1; /* Bright ocean blue */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.pkwater #homeBtn:hover {
+  background-color: #026c9d; /* Deeper shade on hover */
+  transform: scale(1.1);
+}
+
+/* ====== Random Button ====== */
+.pkwater #randomwater {
+  background-color: #0288d1;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.pkwater #randomwater:hover {
+  background-color: #026c9d;
+  transform: scale(1.1);
+}
+
+/* ====== Layout for Images and Center Column ====== */
+.water-layout {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -90,31 +201,73 @@ background-color: blueviolet;
   padding: 0 20px;
 }
 
-.fire-layout img {
+.water-layout img {
   width: 250px;
   height: auto;
   border-radius: 10px;
 }
 
-.center-column {
-  text-align: center;
-  flex-shrink: 0;
+/* Custom Styling for Squirtle & Cloyster */
+.squirtle,
+.cloyster {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(3, 102, 214, 0.5); /* Soft water glow */
 }
 
-.center-column button {
-  margin: 12px 0;
-  padding: 10px 20px;
-  font-size: 1rem;
-  background-color: #ff6600;
+/* ====== Link Container & External Links ====== */
+.link-container {
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* External Links */
+.dex-link {
+  display: none;
+  opacity: 0;
+  padding: 10px 15px;
+  margin: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: opacity 0.4s ease, background-color 0.3s;
+}
+
+/* Reveal links smoothly */
+.dex-link.show {
+  display: inline-block;
+  opacity: 1;
+}
+
+/* Specific Link Styles */
+.dex-link.serebii {
+  background-color: #ffffff;
+  color: #013a63; /* Deep ocean contrast */
+}
+
+.dex-link.serebii:hover {
+  background-color: #67b7d1; /* Water shimmer */
   color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+}
+
+.dex-link.bulbapedia {
+  background-color: #0277bd;
+  color: white;
+}
+
+.dex-link.bulbapedia:hover {
+  background-color: #01579b;
+}
+
+/* Optional Hidden Class */
+.hidden {
+  display: none !important;
 }
 
 /*flying.html*/
 
-.pkfly #homeBtn{
+.pkfly {
 
 }
 
@@ -122,13 +275,6 @@ background-color: blueviolet;
 /*grass.html*/
 
 .pkgrass {
-
-}
-
-
-/*water.html*/
-
-.pkwater {
 
 }
 
