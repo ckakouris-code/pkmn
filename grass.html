@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grass Type Pokémon</title>
-    <link rel="stylesheet" href="pkmnpg.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grass Type Pokémon</title>
+  <link rel="stylesheet" href="pkmnpg.css" />
 </head>
 <body class="pkgrass">
-    <header>
-        <h1>Welcome to Grass-Type Pokémon</h1>
-    </header>
+  <header>
+    <h1>🌿 Welcome to Grass-Type Pokémon 🌿</h1>
+</header>
 
-    <main>
-        <p>This page showcases grassy Pokémon goodness!</p>
-        <button id="randomgrass">Get a Random Grass-Type Pokémon</button>
-        <p id="grassResult"></p>
-    </main>
-        <button id="homeBtn">Home</button>
-    <script src="pkmn-script.js"></script>
+<div class="grass-layout">
+    <img src="type pictures/chikorita.png" class="chikorita" alt="Chikorita" />
+    
+
+    <div class="center-column">
+      <button id="randomgrass">Get a Random Grass-Type Pokémon</button>
+      <p id="grassResult"></p>
+      <div class="link-container">
+        <a class="dex-link serebii" id="serebiiLink" href="#" target="_blank">View on Serebii</a>
+        <a class="dex-link bulbapedia" id="bulbapediaLink" href="#" target="_blank">View on Bulbapedia</a>
+    </div>
+</div>
+<img src="type pictures/bulbasaur.png" class="bulbasaur" alt="Bulbasaur" />
+</div>
+
+<button id="homeBtn">Home</button>
+<script src="pkmn-script.js"></script>
 </body>
 </html>

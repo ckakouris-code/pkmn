@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ice Type Pokémon</title>
-    <link rel="stylesheet" href="pkmnpg.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bug Type Pokémon</title>
+  <link rel="stylesheet" href="pkmnpg.css" />
 </head>
 <body class="pkice">
-    <header>
-        <h1>🔥 Welcome to Ice-Type Pokémon 🔥</h1>
-    </header>
-
-    <main>
-        <p>This page showcases fiery Pokémon goodness!</p>
-        <button id="randomice">Get a Random Ice-Type Pokémon</button>
-        <p id="iceResult"></p>
-    </main>
-        <button id="homeBtn">Home</button>
-    <script src="pkmn-script.js"></script>
+  <header><h1>❄️ Welcome to Ice-Type Pokémon ❄️</h1></header>
+  <div class="ice-layout">
+    <img src="type pictures/snorunt.png" class="snorunt" alt="Snorunt" />
+    <div class="center-column">
+      <button id="randomice">Get a Random Ice-Type Pokémon</button>
+      <p id="iceResult"></p>
+      <div class="link-container">
+        <a class="dex-link serebii" id="serebiiLink" href="#" target="_blank">View on Serebii</a>
+        <a class="dex-link bulbapedia" id="bulbapediaLink" href="#" target="_blank">View on Bulbapedia</a>
+      </div>
+    </div>
+    <img src="type pictures/glaceon.png" class="glaceon" alt="Glaceon" />
+  </div>
+  <button id="homeBtn">Home</button>
+  <script src="pkmn-script.js"></script>
 </body>
 </html>

@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fighting Type Pokémon</title>
-    <link rel="stylesheet" href="pkmnpg.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fighting Type Pokémon</title>
+  <link rel="stylesheet" href="pkmnpg.css" />
 </head>
 <body class="pkfight">
-    <header>
-        <h1>🔥 Welcome to Fighting-Type Pokémon 🔥</h1>
-    </header>
-
-    <main>
-        <p>This page showcases fiery Pokémon goodness!</p>
-        <button id="randomfighting">Get a Random Fighting-Type Pokémon</button>
-        <p id="fightingResult"></p>
-    </main>
-    <button id="homeBtn">Home</button>
-    <script src="pkmn-script.js"></script>
+  <header><h1>🥊 Welcome to Fighting-Type Pokémon 🥊</h1></header>
+  <div class="fighting-layout">
+    <img src="type pictures/lilligant.png" class="lilligant" alt="Lilligant" />
+    <div class="center-column">
+      <button id="randomfighting">Get a Random Fighting-Type Pokémon</button>
+      <p id="fightingResult"></p>
+      <div class="link-container">
+        <a class="dex-link serebii" id="serebiiLink" href="#" target="_blank">View on Serebii</a>
+        <a class="dex-link bulbapedia" id="bulbapediaLink" href="#" target="_blank">View on Bulbapedia</a>
+      </div>
+    </div>
+    <img src="type pictures/falinks.png" class="falinks" alt="Falinks" />
+  </div>
+  <button id="homeBtn">Home</button>
+  <script src="pkmn-script.js"></script>
 </body>
 </html>

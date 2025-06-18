@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dragon Type Pokémon</title>
-    <link rel="stylesheet" href="pkmnpg.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dragon Type Pokémon</title>
+  <link rel="stylesheet" href="pkmnpg.css" />
 </head>
 <body class="pkdragon">
-    <header>
-        <h1>🔥 Welcome to Dragon-Type Pokémon 🔥</h1>
-    </header>
+  <header>
+    <h1>🐉 Welcome to Dragon-Type Pokémon 🐉</h1>
+    <p>Majestic, mighty, and mythical — the legends await!</p>
+  </header>
 
-    <main>
-        <p>This page showcases fiery Pokémon goodness!</p>
-        <button id="randomdragon">Get a Random Dragon-Type Pokémon</button>
-        <p id="dragonResult"></p>
-    </main>
-        <button id="homeBtn">Home</button>
-    <script src="pkmn-script.js"></script>
+  <div class="dragon-layout">
+    <img src="type pictures/dratini.png" class="dratini" alt="Dratini" />
+
+    <div class="center-column">
+      <button id="randomdragon">Get a Random Dragon-Type Pokémon</button>
+      <p id="dragonResult"></p>
+      <div class="link-container">
+        <a class="dex-link serebii" id="serebiiLink" href="#" target="_blank">View on Serebii</a>
+        <a class="dex-link bulbapedia" id="bulbapediaLink" href="#" target="_blank">View on Bulbapedia</a>
+      </div>
+    </div>
+
+    <img src="type pictures/salamence.png" class="salamence" alt="Salamence" />
+  </div>
+
+  <button id="homeBtn">Home</button>
+  <script src="pkmn-script.js"></script>
 </body>
 </html>

@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dark Type Pokémon</title>
-    <link rel="stylesheet" href="pkmnpg.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bug Type Pokémon</title>
+  <link rel="stylesheet" href="pkmnpg.css" />
 </head>
 <body class="pkdark">
-    <header>
-        <h1>Welcome to dark-Type Pokémon</h1>
-    </header>
-
-    <main>
-        <p>This page showcases fiery Pokémon goodness!</p>
-        <button id="randomdark">Get a Random Dark-Type Pokémon</button>
-        <p id="darkResult"></p>
-    </main>
-        <button id="homeBtn">Home</button>
-    <script src="pkmn-script.js"></script>
+  <header><h1>🌑 Welcome to Dark-Type Pokémon 🌑</h1></header>
+  <div class="dark-layout">
+    <img src="type pictures/purrloin.png" class="purrloin" alt="Purrloin" />
+    <div class="center-column">
+      <button id="randomdark">Get a Random Dark-Type Pokémon</button>
+      <p id="darkResult"></p>
+      <div class="link-container">
+        <a class="dex-link serebii" id="serebiiLink" href="#">View on Serebii</a>
+        <a class="dex-link bulbapedia" id="bulbapediaLink" href="#">View on Bulbapedia</a>
+      </div>
+    </div>
+    <img src="type pictures/umbreon.png" class="umbreon" alt="Umbreon" />
+  </div>
+  <button id="homeBtn">Home</button>
+  <script src="pkmn-script.js"></script>
 </body>
 </html>

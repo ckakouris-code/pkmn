@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Psychic Type Pokémon</title>
-    <link rel="stylesheet" href="pkmnpg.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bug Type Pokémon</title>
+  <link rel="stylesheet" href="pkmnpg.css" />
 </head>
-<body>
-    <header>
-        <h1>🔥 Welcome to Psychic-Type Pokémon 🔥</h1>
-    </header>
-
-    <main>
-        <p>This page showcases fiery Pokémon goodness!</p>
-        <button id="randompsychic">Get a Random Psychic-Type Pokémon</button>
-        <p id="psychicResult"></p>
-    </main>
-        <button id="homeBtn">Home</button>
-    <script src="pkmn-script.js"></script>
+<body class="pkpsychic">
+  <header><h1>🔮 Welcome to Psychic-Type Pokémon 🔮</h1></header>
+  <div class="psychic-layout">
+    <img src="type pictures/abra.png" class="abra" alt="Abra" />
+    <div class="center-column">
+      <button id="randompsychic">Get a Random Psychic-Type Pokémon</button>
+      <p id="psychicResult"></p>
+      <div class="link-container">
+        <a class="dex-link serebii" id="serebiiLink" href="#" target="_blank">View on Serebii</a>
+        <a class="dex-link bulbapedia" id="bulbapediaLink" href="#" target="_blank">View on Bulbapedia</a>
+      </div>
+    </div>
+    <img src="type pictures/espeon.png" class="espeon" alt="Espeon" />
+  </div>
+  <button id="homeBtn">Home</button>
+  <script src="pkmn-script.js"></script>
 </body>
 </html>

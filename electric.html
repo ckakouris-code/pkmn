@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Electric Type Pokémon</title>
-    <link rel="stylesheet" href="pkmnpg.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Electric Type Pokémon</title>
+  <link rel="stylesheet" href="pkmnpg.css" />
 </head>
-<body pkelectric>
-    <header>
-        <h1>🔥 Welcome to Electric-Type Pokémon 🔥</h1>
-    </header>
+<body class="pkelectric">
+  <header>
+    <h1>⚡ Welcome to Electric-Type Pokémon ⚡</h1>
+</header>
 
-    <main>
-        <p>This page showcases fiery Pokémon goodness!</p>
-        <button id="randomelectric">Get a Random Electric-Type Pokémon</button>
-        <p id="electricResult"></p>
-    </main>
-        <button id="homeBtn">Home</button>
-    <script src="pkmn-script.js"></script>
+<div class="electric-layout">
+    <img src="type pictures/magnemite.png" class="magnemite" alt="Magnemite" />
+
+    <div class="center-column">
+      <button id="randomelectric">Get a Random Electric-Type Pokémon</button>
+      <p id="electricResult"></p>
+      <div class="link-container">
+        <a class="dex-link serebii" id="serebiiLink" href="#" target="_blank">View on Serebii</a>
+        <a class="dex-link bulbapedia" id="bulbapediaLink" href="#" target="_blank">View on Bulbapedia</a>
+    </div>
+</div>
+<img src="type pictures/Electabuzz.png" class="electabuzz" alt="Electabuzz" />
+
+</div>
+
+<button id="homeBtn">Home</button>
+<script src="pkmn-script.js"></script>
 </body>
 </html>

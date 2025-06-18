@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Poison Type Pokémon</title>
-    <link rel="stylesheet" href="pkmnpg.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bug Type Pokémon</title>
+  <link rel="stylesheet" href="pkmnpg.css" />
 </head>
-<body>
-    <header>
-        <h1>🔥 Welcome to Poison-Type Pokémon 🔥</h1>
-    </header>
-
-    <main>
-        <p>This page showcases fiery Pokémon goodness!</p>
-        <button id="randompoison">Get a Random Poison-Type Pokémon</button>
-        <p id="poisonResult"></p>
-    </main>
-        <button id="homeBtn">Home</button>
-    <script src="pkmn-script.js"></script>
+<body class="pkpoison">
+  <header><h1>☠️ Welcome to Poison-Type Pokémon ☠️</h1></header>
+  <div class="poison-layout">
+    <img src="type pictures/koffing.png" class="koffing" alt="Koffing" />
+    <div class="center-column">
+      <button id="randompoison">Get a Random Poison-Type Pokémon</button>
+      <p id="poisonResult"></p>
+      <div class="link-container">
+        <a class="dex-link serebii" id="serebiiLink" href="#">View on Serebii</a>
+        <a class="dex-link bulbapedia" id="bulbapediaLink" href="#">View on Bulbapedia</a>
+      </div>
+    </div>
+    <img src="type pictures/nidoking.png" class="nidoking" alt="Nidoking" />
+  </div>
+  <button id="homeBtn">Home</button>
+  <script src="pkmn-script.js"></script>
 </body>
 </html>

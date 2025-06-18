@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Normal Type Pokémon</title>
-    <link rel="stylesheet" href="pkmnpg.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Normal Type Pokémon</title>
+  <link rel="stylesheet" href="pkmnpg.css" />
 </head>
 <body class="pknormal">
-    <header>
-        <h1>🔥 Welcome to Normal-Type Pokémon 🔥</h1>
-    </header>
+  <header>
+    <h1>🐾 Welcome to Normal-Type Pokémon 🐾</h1>
+    <p>Your go-to squad for cozy chaos and dependable charm.</p>
+  </header>
 
-    <main>
-        <p>This page showcases fiery Pokémon goodness!</p>
-        <button id="randomnormal">Get a Random Normal-Type Pokémon</button>
-        <p id="normalResult"></p>
-    </main>
-        <button id="homeBtn">Home</button>
-    <script src="pkmn-script.js"></script>
+  <div class="normal-layout">
+    <img src="type pictures/furret.png" class="furret" alt="Furret" />
+
+    <div class="center-column">
+      <button id="randomnormal">Get a Random Normal-Type Pokémon</button>
+      <p id="normalResult"></p>
+      <div class="link-container">
+        <a class="dex-link serebii" id="serebiiLink" href="#" target="_blank">View on Serebii</a>
+        <a class="dex-link bulbapedia" id="bulbapediaLink" href="#" target="_blank">View on Bulbapedia</a>
+      </div>
+    </div>
+
+    <img src="type pictures/kecleon.png" class="kecleon" alt="Kecleon" />
+  </div>
+
+  <button id="homeBtn">Home</button>
+  <script src="pkmn-script.js"></script>
 </body>
 </html>
