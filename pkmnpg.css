@@ -1,165 +1,155 @@
-/*Global Styles that apply to all pages*/
+/* Global Styles */
 body {
-    text-align: center;
-    font-family: Arial, sans-serif;
-    margin-top: 150px;
-    background-color: #ffffff;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin-top: 150px;
+  background-color: #ffffff;
 }
 
 select, button {
-    font-size: 20px;
-    padding: 10px;
-    margin: 10px;
-    cursor: pointer;
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
 }
 
 button {
-    background-color: #d90505;
-    border: none;
-    border-radius: 5px;
+  background-color: #d90505;
+  border: none;
+  border-radius: 5px;
 }
 
 button:hover {
-    background-color: #13500c;
+  background-color: #13500c;
 }
 
 h1 {
-   color: blueviolet; 
+  color: blueviolet;
 }
 
 h2 {
-
-    margin-top: 150px;
-    margin-left: 25px;
-    color: blueviolet;
+  margin-top: 150px;
+  margin-left: 25px;
+  color: blueviolet;
 }
 
 #searchResult {
-    margin-top: 25px;
-    text-align: center;
-    background-color: blueviolet;
+  margin-top: 25px;
+  text-align: center;
+  background-color: blueviolet;
 }
 
+/* === Link Styling Shared Across Pages === */
+.dex-link {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  padding: 10px 15px;
+  margin: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: opacity 0.4s ease, background-color 0.3s;
+}
 
+.dex-link.show {
+  display: inline-block;
+  opacity: 1;
+  pointer-events: auto;
+}
 
+/* Homepage Styles */
+body:has(#randomButton) {
+  background-color: #f2f2f2;
+  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 40px;
+}
 
-/* Fire Page Styles */
+/* Header */
+body h1 {
+  font-size: 2.5rem;
+  color: #d1055d;
+  text-shadow: 1px 1px white;
+  margin-bottom: 30px;
+}
+
+/* Type Dropdown */
+label[for="type"] {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-right: 8px;
+}
+
+#type {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  background-color: #fff;
+}
+
+/* Buttons Shared */
+#randomButton,
+#searchButton,
+#randomTypeBtn {
+  background-color: #5e35b1;
+  color: white;
+  padding: 10px 20px;
+  margin: 15px 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+#randomButton:hover,
+#searchButton:hover,
+#randomTypeBtn:hover {
+  background-color: #4527a0;
+  transform: scale(1.05);
+}
+
+/* Input Field */
+#searchInput {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 250px;
+  margin: 10px auto;
+}
+
+/* Result Styling */
+#searchResult {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #e0d7f8;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(81, 45, 168, 0.2);
+}
+
+/* Section Headings */
+h2 {
+  color: #333366;
+  margin-top: 40px;
+}
+
+/* ========== FIRE PAGE ========== */
 .pkfire {
-    background-color: #36454f;
-    color: whitesmoke;
+  background-color: #36454f;
+  color: whitesmoke;
 }
 
 .pkfire h1 {
-    color: white;
+  color: white;
 }
 
-/* Fire Page Home Button */
-.pkfire #homeBtn {
-    background-color: #FF5733; /* Fiery red */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.pkfire #homeBtn:hover {
-    background-color: #E64A19;
-}
-
-/* Fire Page Random Button */
-.randomfire {
-    background-color: #FF5733; /* Fiery red */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.fire-layout {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 40px auto;
-    max-width: 1000px;
-    padding: 0 20px;
-}
-
-.fire-layout img {
-    width: 250px;
-    height: auto;
-    border-radius: 10px;
-    flex-grow: 1;
-}
-
-.center-column {
-    text-align: center;
-    flex-shrink: 0;
-}
-
-.center-column button {
-    margin: 12px 0;
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #ff6600;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/* Link Container */
-.link-container {
-    margin-top: 10px;
-    text-align: center;
-}
-
-/* Serebii Link */
-.dex-link.serebii {
-    background-color: white;
-    color: black;
-    padding: 8px;
-    border-radius: 5px;
-    display: none;
-}
-
-.dex-link.serebii:hover {
-    background-color: #2f6e31;
-}
-
-/* Bulbapedia Link */
-.dex-link.bulbapedia {
-    background-color: #1e90ff;
-    color: white;
-    padding: 8px;
-    border-radius: 5px;
-    display: none;
-}
-
-.dex-link.bulbapedia:hover {
-    background-color: #156dbe;
-}
-
-/*water.html*/
-
-/* ====== Base Page Layout ====== */
-.pkwater {
-  background-color: #013a63; /* Deep ocean blue */
-  color: #e0f7fa; /* Light seafoam */
-}
-
-.pkwater h1 {
-  color: #a7c7e7; /* Soft sky blue */
-}
-
-/* ====== Home Button ====== */
-.pkwater #homeBtn {
-  background-color: #0288d1; /* Bright ocean blue */
+.pkfire #homeBtn,
+.pkfire .randomfire {
+  background-color: #FF5733;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -169,12 +159,73 @@ h2 {
   transition: background-color 0.3s, transform 0.2s;
 }
 
-.pkwater #homeBtn:hover {
-  background-color: #026c9d; /* Deeper shade on hover */
-  transform: scale(1.1);
+.pkfire #homeBtn:hover,
+.pkfire .randomfire:hover {
+  background-color: #E64A19;
 }
 
-/* ====== Random Button ====== */
+.fire-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px auto;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+.fire-layout img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  flex-grow: 1;
+}
+
+.center-column {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.center-column button {
+  margin: 12px 0;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pkfire .dex-link.serebii {
+  background-color: #ff4500;
+  color: white;
+}
+
+.pkfire .dex-link.serebii:hover {
+  background-color: #ff9999;
+  color: black;
+}
+
+.pkfire .dex-link.bulbapedia {
+  background-color: #ff4500;
+  color: white;
+}
+
+.pkfire .dex-link.bulbapedia:hover {
+  background-color: #cc3700;
+}
+
+/* ========== WATER PAGE ========== */
+.pkwater {
+  background-color: #013a63;
+  color: #e0f7fa;
+}
+
+.pkwater h1 {
+  color: #a7c7e7;
+}
+
+.pkwater #homeBtn,
 .pkwater #randomwater {
   background-color: #0288d1;
   color: white;
@@ -186,12 +237,12 @@ h2 {
   transition: background-color 0.3s, transform 0.2s;
 }
 
+.pkwater #homeBtn:hover,
 .pkwater #randomwater:hover {
   background-color: #026c9d;
   transform: scale(1.1);
 }
 
-/* ====== Layout for Images and Center Column ====== */
 .water-layout {
   display: flex;
   justify-content: space-between;
@@ -201,68 +252,32 @@ h2 {
   padding: 0 20px;
 }
 
-.water-layout img {
-  width: 250px;
-  height: auto;
-  border-radius: 10px;
-}
-
-/* Custom Styling for Squirtle & Cloyster */
+.water-layout img,
 .squirtle,
 .cloyster {
   width: 250px;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0px 0px 15px rgba(3, 102, 214, 0.5); /* Soft water glow */
+  box-shadow: 0px 0px 15px rgba(3, 102, 214, 0.5);
 }
 
-/* ====== Link Container & External Links ====== */
-.link-container {
-  margin-top: 12px;
-  text-align: center;
-}
-
-/* External Links */
-.dex-link {
-  display: none;
-  opacity: 0;
-  padding: 10px 15px;
-  margin: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: opacity 0.4s ease, background-color 0.3s;
-}
-
-/* Reveal links smoothly */
-.dex-link.show {
-  display: inline-block;
-  opacity: 1;
-}
-
-/* Specific Link Styles */
-.dex-link.serebii {
+.pkwater .dex-link.serebii {
   background-color: #ffffff;
-  color: #013a63; /* Deep ocean contrast */
+  color: #013a63;
 }
 
-.dex-link.serebii:hover {
-  background-color: #67b7d1; /* Water shimmer */
+.pkwater .dex-link.serebii:hover {
+  background-color: #67b7d1;
   color: white;
 }
 
-.dex-link.bulbapedia {
+.pkwater .dex-link.bulbapedia {
   background-color: #0277bd;
   color: white;
 }
 
-.dex-link.bulbapedia:hover {
+.pkwater .dex-link.bulbapedia:hover {
   background-color: #01579b;
-}
-
-/* Optional Hidden Class */
-.hidden {
-  display: none !important;
 }
 
 /*flying.html*/
