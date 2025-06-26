@@ -7,20 +7,28 @@
   <link rel="stylesheet" href="pkmnpg.css" />
 </head>
 <body class="pkbug">
-  <header><h1>🐞 Welcome to Bug-Type Pokémon 🐞</h1></header>
+  <header>
+    <h1>🐞 Welcome to Bug-Type Pokémon 🐞</h1>
+    </header>
+
   <div class="bug-layout">
     <img src="type pictures/vespequen.png" class="vespequen" alt="Vespequen" />
+    
     <div class="center-column">
       <button id="randombug">Get a Random Bug-Type Pokémon</button>
-      <p id="bugResult"></p>
+
+      <div id="bugResult"></div>
+
       <div class="link-container">
-        <a class="dex-link serebii" id="serebiiLink" href="#" target="_blank">View on Serebii</a>
-        <a class="dex-link bulbapedia" id="bulbapediaLink" href="#" target="_blank">View on Bulbapedia</a>
+        <a class="dex-link official hidden" id="officialLink" href="#" target="_blank">View on Pokémon.com</a>
+        <a class="dex-link serebii hidden" id="serebiiLink" href="#" target="_blank">View on Serebii</a>
+        <a class="dex-link bulbapedia hidden" id="bulbapediaLink" href="#" target="_blank">View on Bulbapedia</a>
       </div>
     </div>
+
     <img src="type pictures/butterfree.png" class="butterfree" alt="Butterfree" />
   </div>
   <button id="homeBtn">Home</button>
-  <script src="pkmn-script.js"></script>
+  <script src="type-page.js"></script>
 </body>
 </html>

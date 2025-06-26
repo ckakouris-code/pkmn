@@ -40,22 +40,22 @@ h2 {
 }
 
 /* === Link Styling Shared Across Pages === */
+
 .dex-link {
   display: none;
   opacity: 0;
   pointer-events: none;
-  padding: 10px 15px;
-  margin: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: opacity 0.4s ease, background-color 0.3s;
+  transition: opacity 0.3s ease;
 }
 
 .dex-link.show {
   display: inline-block;
   opacity: 1;
   pointer-events: auto;
+}
+
+.dex-link.hidden {
+  display: none;
 }
 
 /* Homepage Styles */
@@ -137,7 +137,58 @@ h2 {
   margin-top: 40px;
 }
 
+/*pokedex links*/
+
+/* Shared base style for all external Pokédex links */
+a.dex-link {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 14px;
+  margin: 4px;
+  border-radius: 6px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  color: #1a1a1a;
+  border: 2px solid #ccc;
+  background-color: #e6e6e6;
+}
+
+a.dex-link:hover {
+  transform: translateY(-2px);
+}
+
+/* Pokémon.com official link */
+a.dex-link.official {
+  background-color: #f2cb07;
+  border-color: #e2b607;
+}
+
+a.dex-link.official:hover {
+  background-color: #ffe451;
+}
+
+/* Serebii styling */
+a.dex-link.serebii {
+  background-color: #a5d6a7;
+  border-color: #7cb342;
+}
+
+a.dex-link.serebii:hover {
+  background-color: #c8e6c9;
+}
+
+/* Bulbapedia styling */
+a.dex-link.bulbapedia {
+  background-color: #bbdefb;
+  border-color: #64b5f6;
+}
+
+a.dex-link.bulbapedia:hover {
+  background-color: #e3f2fd;
+}
+
 /*fire.html*/
+
 .pkfire {
   background-color: #36454f;
   color: whitesmoke;
@@ -196,6 +247,15 @@ h2 {
   cursor: pointer;
 }
 
+.pkfire .dex-link.official {
+background-color: ff4500;
+color: white;
+}
+
+.pkfire .dex-link.official:hover {
+background-color: ff9999;
+}
+
 .pkfire .dex-link.serebii {
   background-color: #ff4500;
   color: white;
@@ -203,7 +263,6 @@ h2 {
 
 .pkfire .dex-link.serebii:hover {
   background-color: #ff9999;
-  color: black;
 }
 
 .pkfire .dex-link.bulbapedia {
@@ -261,6 +320,14 @@ h2 {
   box-shadow: 0px 0px 15px rgba(3, 102, 214, 0.5);
 }
 
+.pkwater .dex-link.official {
+  background-color: #0277bd;
+}
+
+.pkwater .dex-link.official:hover {
+  background-color: #01579b;
+}
+
 .pkwater .dex-link.serebii {
   background-color: #ffffff;
   color: #013a63;
@@ -268,7 +335,6 @@ h2 {
 
 .pkwater .dex-link.serebii:hover {
   background-color: #67b7d1;
-  color: white;
 }
 
 .pkwater .dex-link.bulbapedia {
@@ -333,6 +399,16 @@ h2 {
 }
 
 /* Link Styling */
+
+.pkgrass .dex-link.official {
+background-color: #c8e6c9;
+  color: #1b5e20;
+}
+
+.pkgrass .dex-link.official:hover {
+  background-color: #81c784;
+}
+
 .pkgrass .dex-link.serebii {
   background-color: #c8e6c9;
   color: #1b5e20;
@@ -340,7 +416,6 @@ h2 {
 
 .pkgrass .dex-link.serebii:hover {
   background-color: #81c784;
-  color: white;
 }
 
 .pkgrass .dex-link.bulbapedia {
@@ -400,6 +475,35 @@ h2 {
   box-shadow: 0px 0px 15px rgba(253, 216, 53, 0.4);
 }
 
+/* Link Styling */
+
+.pkelectric .dex-link.official {
+background-color: #c8e6c9;
+  color: #1b5e20;
+}
+
+.pkelectric .dex-link.official:hover {
+  background-color: #81c784;
+}
+
+.pkelectric .dex-link.serebii {
+  background-color: #c8e6c9;
+  color: #1b5e20;
+}
+
+.pkelectric .dex-link.serebii:hover {
+  background-color: #81c784;
+}
+
+.pkelectric .dex-link.bulbapedia {
+  background-color: #81c784;
+  color: white;
+}
+
+.pkelectric .dex-link.bulbapedia:hover {
+  background-color: #388e3c;
+}
+
 /*bug.html*/
 
 .pkbug {
@@ -446,6 +550,39 @@ h2 {
   height: auto;
   border-radius: 10px;
   box-shadow: 0px 0px 15px rgba(253, 216, 53, 0.4);
+}
+
+body.pkbug #bugResult {
+  color: white;
+}
+
+/* Link Styling */
+
+.pkbug .dex-link.official {
+background-color: #c8e6c9;
+  color: #1b5e20;
+}
+
+.pkbug .dex-link.official:hover {
+  background-color: #81c784;
+}
+
+.pkbug .dex-link.serebii {
+  background-color: #c8e6c9;
+  color: #1b5e20;
+}
+
+.pkbug .dex-link.serebii:hover {
+  background-color: #81c784;
+}
+
+.pkbug .dex-link.bulbapedia {
+  background-color: #81c784;
+  color: white;
+}
+
+.pkbug .dex-link.bulbapedia:hover {
+  background-color: #388e3c;
 }
 
 /*normal.html*/
@@ -500,6 +637,16 @@ h2 {
 }
 
 /* Link Styling */
+
+.pknormal .dex-link.official{
+background-color: #873600;
+  color: white;
+}
+
+.pknormal.dex-link.official:hover{
+  background-color: #81c784;
+}
+
 .pknormal .dex-link.serebii {
   background-color: #873600;
   color: white;
@@ -507,7 +654,6 @@ h2 {
 
 .pknormal .dex-link.serebii:hover {
   background-color: #81c784;
-  color: white;
 }
 
 .pknormal .dex-link.bulbapedia {
@@ -568,6 +714,16 @@ h2 {
 }
 
 /* Link Styling */
+
+.pkdark .dex-link.official {
+background-color: fbc02d;
+color: black;
+}
+
+.pkdark .dex-link.official:hover {
+  background-color: #00aeff;
+}
+
 .pkdark .dex-link.serebii {
   background-color: #fbc02d;
   color: black;
@@ -575,7 +731,7 @@ h2 {
 
 .pkdark .dex-link.serebii:hover {
   background-color: #00aeff;
-  color: white;
+  color: black;
 }
 
 .pkdark .dex-link.bulbapedia {
@@ -637,18 +793,27 @@ h2 {
 }
 
 /* Link Styling */
+
+.pkdragon .dex-link.official {
+background-color: #7117d4;
+color: white;
+}
+
+.pkdragon .dex-link.official:hover {
+  background-color: #388e3c;
+}
+
 .pkdragon .dex-link.serebii {
-  background-color: #c8e6c9;
-  color: #1b5e20;
+  background-color: #7117d4;
+  color: white;
 }
 
 .pkdragon .dex-link.serebii:hover {
   background-color: #81c784;
-  color: white;
 }
 
 .pkdragon .dex-link.bulbapedia {
-  background-color: #81c784;
+  background-color: #7117d4;
   color: white;
 }
 
@@ -705,6 +870,35 @@ h2 {
   box-shadow: 0px 0px 15px rgba(253, 216, 53, 0.4);
 }
 
+/* Link Styling */
+
+.pkfighting .dex-link.official {
+background-color: #7117d4;
+color: white;
+}
+
+.pkfighting .dex-link.official:hover {
+  background-color: #388e3c;
+}
+
+.pkfighting .dex-link.serebii {
+  background-color: #7117d4;
+  color: white;
+}
+
+.pkfighting .dex-link.serebii:hover {
+  background-color: #81c784;
+}
+
+.pkfighting .dex-link.bulbapedia {
+  background-color: #7117d4;
+  color: white;
+}
+
+.pkfighting .dex-link.bulbapedia:hover {
+  background-color: #388e3c;
+}
+
 /*rock.html*/
 
 .pkrock {
@@ -754,6 +948,16 @@ h2 {
 }
 
 /* Link Styling */
+
+.pkrock .dex-link.official {
+  background-color: #c8e6c9;
+  color: #1b5e20;
+}
+
+.pkrock .dex-link.official:hover {
+  background-color: #81c784;
+}
+
 .pkrock .dex-link.serebii {
   background-color: #c8e6c9;
   color: #1b5e20;
@@ -822,6 +1026,17 @@ h2 {
 }
 
 /* Link Styling */
+
+.pkfairy .dex-link.official {
+  background-color: #c8e6c9;
+  color: #1b5e20;
+}
+
+.pkfairy .dex-link.official:hover {
+  background-color: #81c784;
+  color: white;
+}
+
 .pkfairy .dex-link.serebii {
   background-color: #c8e6c9;
   color: #1b5e20;
@@ -890,6 +1105,17 @@ h2 {
 }
 
 /* Link Styling */
+
+.pkghost .dex-link.official {
+  background-color: #c8e6c9;
+  color: #1b5e20;
+}
+
+.pkghost .dex-link.official:hover {
+  background-color: #81c784;
+  color: white;
+}
+
 .pkghost .dex-link.serebii {
   background-color: #c8e6c9;
   color: #1b5e20;
@@ -941,6 +1167,7 @@ h2 {
 }
 
 /* Layout Styling */
+
 .ground-layout {
   display: flex;
   justify-content: space-between;
@@ -962,6 +1189,17 @@ h2 {
 }
 
 /* Link Styling */
+
+.pkground .dex-link.official {
+  background-color: #c8e6c9;
+  color: #1b5e20;
+}
+
+.pkground .dex-link.official:hover {
+  background-color: #81c784;
+  color: white;
+}
+
 .pkground .dex-link.serebii {
   background-color: #c8e6c9;
   color: #1b5e20;
@@ -1013,6 +1251,7 @@ h2 {
 }
 
 /* Layout Styling */
+
 .ice-layout {
   display: flex;
   justify-content: space-between;
@@ -1034,6 +1273,17 @@ h2 {
 }
 
 /* Link Styling */
+
+.pkice .dex-link.official {
+    background-color: #c8e6c9;
+  color: #1b5e20;
+}
+
+.pkice .dex-link.official:hover {
+  background-color: #81c784;
+  color: white;
+}
+
 .pkice .dex-link.serebii {
   background-color: #c8e6c9;
   color: #1b5e20;
@@ -1085,6 +1335,7 @@ h2 {
 }
 
 /* Layout Styling */
+
 .poison-layout {
   display: flex;
   justify-content: space-between;
@@ -1106,6 +1357,16 @@ h2 {
 }
 
 /* Link Styling */
+
+.pkpoison .dex-link.official {
+background-color: #c8e6c9;
+color: white;
+}
+
+.pkpoison .dex-link.official:hover {
+background-color: #388e3c;
+}
+
 .pkpoison .dex-link.serebii {
   background-color: #c8e6c9;
   color: #1b5e20;
@@ -1113,77 +1374,6 @@ h2 {
 
 .pkpoison .dex-link.serebii:hover {
   background-color: #81c784;
-  color: white;
-}
-
-.pkpoison .dex-link.bulbapedia {
-  background-color: #81c784;
-  color: white;
-}
-
-.pkpoison .dex-link.bulbapedia:hover {
-  background-color: #388e3c;
-}
-
-
-.pkpoison {
-  background-color: #e4f5d4;
-  color: #2f4f2f;
-}
-
-.pkpoison h1 {
-  color: #388e3c;
-}
-
-/* Home and Random Button Styles */
-.pkpoison #homeBtn,
-.pkpoison #randompoison {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.pkpoison #homeBtn:hover,
-.pkpoison #randompoison:hover {
-  background-color: #2e7d32;
-  transform: scale(1.05);
-}
-
-/* Layout Styling */
-.poison-layout {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 40px auto;
-  max-width: 1000px;
-  padding: 0 20px;
-}
-
-.poison-layout img,
-.bulbasaur,
-.chikorita {
-  width: 250px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0px 0px 15px rgba(56, 142, 60, 0.3); /* Soft green glow */
-  background-color: transparent;
-  background: transparent;
-}
-
-/* Link Styling */
-.pkpoison .dex-link.serebii {
-  background-color: #c8e6c9;
-  color: #1b5e20;
-}
-
-.pkpoison .dex-link.serebii:hover {
-  background-color: #81c784;
-  color: white;
 }
 
 .pkpoison .dex-link.bulbapedia {
@@ -1227,6 +1417,7 @@ h2 {
 }
 
 /* Layout Styling */
+
 .steel-layout {
   display: flex;
   justify-content: space-between;
@@ -1248,6 +1439,15 @@ h2 {
 }
 
 /* Link Styling */
+
+.pksteel .dex-link.official {
+background-color: #c8e6c9;
+color: white;
+}
+
+.pksteel .dex-link.official:hover {
+background-color: #388e3c;
+}
 .pksteel .dex-link.serebii {
   background-color: #c8e6c9;
   color: #1b5e20;
@@ -1267,3 +1467,79 @@ h2 {
   background-color: #388e3c;
 }
 
+/*psychic.html*/
+
+.pkpsychic {
+  background-color: #006400;
+  color: #333;
+}
+
+.pkpsychic h1 {
+  color: #fbc02d;
+  text-shadow: 1px 1px #fff176;
+}
+
+.pkpsychic #homeBtn,
+.pkpsychic #randompsychic {
+  background-color: #fdd835;
+  color: #212121;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.pkpsychic #homeBtn:hover,
+.pkpsychic #randompsychic:hover {
+  background-color: #fbc02d;
+  transform: scale(1.05);
+}
+
+.psychic-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px auto;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+.psychic-layout img,
+.butterfree,
+.vespiquen {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(253, 216, 53, 0.4);
+}
+
+/* Link Styling */
+
+.pkpsychic .dex-link.official {
+background-color: #c8e6c9;
+color: white;
+}
+
+.pkpsychic .dex-link.official:hover {
+background-color: #388e3c;
+}
+
+.pkpsychic .dex-link.serebii {
+  background-color: #c8e6c9;
+  color: #1b5e20;
+}
+
+.pkpsychic .dex-link.serebii:hover {
+  background-color: #81c784;
+}
+
+.pkpsychic .dex-link.bulbapedia {
+  background-color: #81c784;
+  color: white;
+}
+
+.pkpsychic .dex-link.bulbapedia:hover {
+  background-color: #388e3c;
+}

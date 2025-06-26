@@ -21,11 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   let pageType = null;
-  Object.keys(typeMappings).forEach(key => {
+  for (const key in typeMappings) {
     if (bodyClass.contains(key)) {
       pageType = typeMappings[key];
+      break;
     }
-  });
+  }
 
   if (pageType) setupPokemonPage(pageType);
 
@@ -38,15 +39,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function setupPokemonPage(type) {
-  console.log(`🔎 Setting up ${type}-type Pokémon page.`);
-
   const randomBtn = document.getElementById(`random${type}`);
   const resultContainer = document.getElementById(`${type}Result`);
+  const officialLink = document.getElementById("officialLink");
   const serebiiLink = document.getElementById("serebiiLink");
   const bulbapediaLink = document.getElementById("bulbapediaLink");
 
-  if (!randomBtn || !resultContainer || !serebiiLink || !bulbapediaLink) {
-    console.error(`❌ Missing elements for ${type} page.`);
+  if (!randomBtn || !resultContainer || !officialLink || !serebiiLink || !bulbapediaLink) {
+    console.error("❌ Missing required elements for link or result handling.");
     return;
   }
 
@@ -58,20 +58,26 @@ function setupPokemonPage(type) {
       pokemonList = data.pokemon
         .filter(p => !p.pokemon.name.includes("-"))
         .map(p => p.pokemon.name);
-      console.log(`✅ Loaded ${pokemonList.length} ${type}-type base Pokémon.`);
     })
     .catch(error => {
-      console.error(`❌ Error loading ${type}-type Pokémon list:`, error);
+      console.error(`❌ Error loading ${type}-type list:`, error);
       resultContainer.textContent = "Failed to load Pokémon list.";
     });
 
-  randomBtn.addEventListener("click", async function () {
+  randomBtn.addEventListener("click", async () => {
     if (pokemonList.length === 0) {
       resultContainer.textContent = `No ${type}-type Pokémon found.`;
       return;
     }
 
     resultContainer.innerHTML = "Fetching Pokémon...";
+
+    // Hide links while loading
+    [officialLink, serebiiLink, bulbapediaLink].forEach(link => {
+      link.classList.remove("show");
+      link.classList.add("hidden");
+    });
+
     const randomName = pokemonList[Math.floor(Math.random() * pokemonList.length)];
 
     try {
@@ -79,10 +85,7 @@ function setupPokemonPage(type) {
       const pokemon = await res.json();
 
       if (pokemon.id > 1010 || pokemon.name.includes("-")) {
-        console.warn("⚠️ Skipping unsupported or alternate form:", pokemon.name);
         resultContainer.textContent = "That Pokémon isn't supported in this Dex. Try again!";
-        serebiiLink.classList.remove("show");
-        bulbapediaLink.classList.remove("show");
         return;
       }
 
@@ -92,6 +95,7 @@ function setupPokemonPage(type) {
         .toLowerCase()
         .replace(/\s+/g, "_")
         .replace(/'/g, "%27")}_\(Pokémon\)`;
+      const officialDexURL = `https://www.pokemon.com/us/pokedex/${pokemon.id}`;
 
       resultContainer.innerHTML = `
         <h3>${pokemon.name.toUpperCase()}</h3>
@@ -99,18 +103,19 @@ function setupPokemonPage(type) {
         <p>Type: ${pokemon.types.map(t => t.type.name).join(", ")}</p>
       `;
 
+      officialLink.href = officialDexURL;
       serebiiLink.href = serebiiURL;
       bulbapediaLink.href = bulbapediaURL;
-      serebiiLink.classList.remove("hidden");
-      bulbapediaLink.classList.remove("hidden");
-      serebiiLink.classList.add("show");
-      bulbapediaLink.classList.add("show");
+
+      // Now show the links after everything is set
+      [officialLink, serebiiLink, bulbapediaLink].forEach(link => {
+        link.classList.remove("hidden");
+        link.classList.add("show");
+      });
 
     } catch (error) {
-      console.error(`❌ Error fetching Pokémon details:`, error);
-      resultContainer.textContent = "Failed to load Pokémon details.";
-      serebiiLink.classList.remove("show");
-      bulbapediaLink.classList.remove("show");
+      console.error("❌ Failed to fetch Pokémon details:", error);
+      resultContainer.textContent = "Failed to fetch Pokémon.";
     }
   });
 }

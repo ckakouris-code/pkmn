@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   }
 
   const isHomepage = document.body.classList.length === 0;
-
   if (!isHomepage) return;
 
   const randomBtn = document.getElementById("randomButton");
@@ -27,11 +26,33 @@ document.addEventListener("DOMContentLoaded", async function () {
   const searchResult = document.getElementById("searchResult");
   const randomTypeBtn = document.getElementById("randomTypeBtn");
 
+  function displayPokemon(pokemon) {
+    const formattedName = normalizePokemonName(pokemon.name);
+    const serebiiURL = `https://www.serebii.net/pokemon/${formattedName}/`;
+    const bulbapediaURL = `https://bulbapedia.bulbagarden.net/wiki/${pokemon.name
+      .toLowerCase()
+      .replace(/\s+/g, "_")
+      .replace(/'/g, "%27")}_\(Pokémon\)`;
+    const officialDexURL = `https://www.pokemon.com/us/pokedex/${pokemon.id}`;
+
+    searchResult.innerHTML = `
+      <h3>${pokemon.name.toUpperCase()}</h3>
+      <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
+      <p>Type: ${pokemon.types.map(t => t.type.name).join(", ")}</p>
+      <div class="link-container">
+        <a class="dex-link official show" href="${officialDexURL}" target="_blank">View on Pokémon.com</a>
+        <a class="dex-link serebii show" href="${serebiiURL}" target="_blank">View on Serebii</a>
+        <a class="dex-link bulbapedia show" href="${bulbapediaURL}" target="_blank">View on Bulbapedia</a>
+      </div>
+    `;
+  }
+
   if (randomBtn && typeDropdown && searchResult) {
     randomBtn.addEventListener("click", async function () {
       const selectedType = typeDropdown.value;
+
       try {
-        const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1025");
+        const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1011");
         const data = await response.json();
 
         const pokemonData = await Promise.all(
@@ -43,7 +64,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         const filteredList = pokemonData
           .filter(p => (selectedType === "all" || p.types.some(t => t.type.name === selectedType)))
-          .filter(p => p.id <= 1010 && !p.name.includes("-"));
+          .filter(p => p.id <= 1010);
 
         if (filteredList.length === 0) {
           alert("No Pokémon found for this type!");
@@ -51,23 +72,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
 
         const randomPokemon = filteredList[Math.floor(Math.random() * filteredList.length)];
-
-        const formattedName = normalizePokemonName(randomPokemon.name);
-        const serebiiURL = `https://www.serebii.net/pokemon/${formattedName}/`;
-        const bulbapediaURL = `https://bulbapedia.bulbagarden.net/wiki/${randomPokemon.name
-          .toLowerCase()
-          .replace(/\s+/g, "_")
-          .replace(/'/g, "%27")}_\(Pokémon\)`;
-
-        searchResult.innerHTML = `
-          <h3>${randomPokemon.name.toUpperCase()}</h3>
-          <img src="${randomPokemon.sprites.front_default}" alt="${randomPokemon.name}">
-          <p>Type: ${randomPokemon.types.map(t => t.type.name).join(", ")}</p>
-          <div class="link-container">
-            <a class="dex-link serebii" href="${serebiiURL}" target="_blank">View on Serebii</a>
-            <a class="dex-link bulbapedia" href="${bulbapediaURL}" target="_blank">View on Bulbapedia</a>
-          </div>
-        `;
+        displayPokemon(randomPokemon);
       } catch (error) {
         console.error("Error fetching Pokémon data:", error);
         alert("Failed to fetch Pokémon data. Please try again.");
@@ -94,29 +99,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         const pokemon = await res.json();
 
-        if (pokemon.id > 1010 || pokemon.name.includes("-")) {
+        if (pokemon.id > 1010) {
           alert("This Pokémon isn't supported in this Pokédex.");
           return;
         }
 
-        const formattedName = normalizePokemonName(pokemon.name);
-        const serebiiURL = `https://www.serebii.net/pokemon/${formattedName}/`;
-        const bulbapediaURL = `https://bulbapedia.bulbagarden.net/wiki/${pokemon.name
-          .toLowerCase()
-          .replace(/\s+/g, "_")
-          .replace(/'/g, "%27")}_\(Pokémon\)`;
-        const officialDexURL = `https://www.pokemon.com/us/pokedex/${pokemon.id}`;
-
-        searchResult.innerHTML = `
-          <h3>${pokemon.name.toUpperCase()}</h3>
-          <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
-          <p>Type: ${pokemon.types.map(t => t.type.name).join(", ")}</p>
-          <div class="link-container">
-            <a class="dex-link official" href="${officialDexURL}" target="_blank">View on Pokémon.com</a>
-            <a class="dex-link serebii" href="${serebiiURL}" target="_blank">View on Serebii</a>
-            <a class="dex-link bulbapedia" href="${bulbapediaURL}" target="_blank">View on Bulbapedia</a>
-          </div>
-        `;
+        displayPokemon(pokemon);
       } catch (error) {
         console.error("Search failed:", error);
         alert("Error retrieving Pokémon.");

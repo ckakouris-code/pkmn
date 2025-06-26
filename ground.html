@@ -7,17 +7,26 @@
   <link rel="stylesheet" href="pkmnpg.css" />
 </head>
 <body class="pkground">
-  <header><h1>🌍 Welcome to Ground-Type Pokémon 🌍</h1></header>
+  <header>
+    <h1>🌍 Welcome to Ground-Type Pokémon 🌍</h1>
+    <p>ground</p>
+  </header>
+
   <div class="ground-layout">
     <img src="type pictures/diglett.png" class="diglett" alt="Diglett" />
+
     <div class="center-column">
       <button id="randomground">Get a Random Ground-Type Pokémon</button>
-      <p id="groundResult"></p>
+
+<div id="groundResult"></div>
+
       <div class="link-container">
-        <a class="dex-link serebii" id="serebiiLink" href="#">View on Serebii</a>
-        <a class="dex-link bulbapedia" id="bulbapediaLink" href="#">View on Bulbapedia</a>
+        <a class="dex-link official hidden" id="officialLink" href="#" target="_blank">View on Pokémon.com</a>
+        <a class="dex-link serebii hidden" id="serebiiLink" href="#" target="_blank">View on Serebii</a>
+        <a class="dex-link bulbapedia hidden" id="bulbapediaLink" href="#" target="_blank">View on Bulbapedia</a>
       </div>
     </div>
+    
     <img src="type pictures/sandshrew.png" class="sandshrew" alt="Sandshrew" />
   </div>
   <button id="homeBtn">Home</button>
